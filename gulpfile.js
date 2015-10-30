@@ -21,11 +21,7 @@ gulp.task('sass', function(){
 
 gulp.task('default',['jshint','sass'],  function() {
   //watches for sass changes
-  gulp.watch('./public/sass/**/*.scss', function() {
-    gulp.run('sass');
-  });
+  gulp.watch('./public/sass/**/*.scss',['sass']);
   //watches for js changes
-  gulp.watch('./public/javascript/**/*.js', function() {
-    gulp.run('jshint');
-  });
+  gulp.watch('./public/javascript/**/*.js', ['jshint']);
 });
